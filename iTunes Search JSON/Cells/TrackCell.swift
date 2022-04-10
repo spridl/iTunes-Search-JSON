@@ -15,6 +15,7 @@ class TrackCell: UITableViewCell {
     private let networkManager = NetworkManager.shared
     
     func configure(with track: Track) {
+        trackImageView.layer.cornerRadius = 10
         trackNameLabel.text = track.trackName
         artistNameLabel.text = track.artistName
         
