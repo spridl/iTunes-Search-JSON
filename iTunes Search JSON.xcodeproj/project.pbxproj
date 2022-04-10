@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		951A311D2800B78300350D60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A311C2800B78300350D60 /* AppDelegate.swift */; };
 		951A311F2800B78300350D60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A311E2800B78300350D60 /* SceneDelegate.swift */; };
-		951A31212800B78300350D60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A31202800B78300350D60 /* ViewController.swift */; };
+		951A31212800B78300350D60 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A31202800B78300350D60 /* DetailViewController.swift */; };
 		951A31242800B78300350D60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 951A31222800B78300350D60 /* Main.storyboard */; };
 		951A31262800B78300350D60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 951A31252800B78300350D60 /* Assets.xcassets */; };
 		951A31292800B78300350D60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 951A31272800B78300350D60 /* LaunchScreen.storyboard */; };
+		951A31312800B88900350D60 /* TrackListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A31302800B88900350D60 /* TrackListTableViewController.swift */; };
+		951A313A2800BCEA00350D60 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A31392800BCEA00350D60 /* Track.swift */; };
+		951A313C2800BE2100350D60 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A313B2800BE2100350D60 /* NetworkManager.swift */; };
+		95C9ED1A2802D9CC00BA0282 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C9ED192802D9CC00BA0282 /* TrackCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		951A31192800B78300350D60 /* iTunes Search JSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Search JSON.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		951A311C2800B78300350D60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		951A311E2800B78300350D60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		951A31202800B78300350D60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		951A31202800B78300350D60 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		951A31232800B78300350D60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		951A31252800B78300350D60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		951A31282800B78300350D60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		951A312A2800B78300350D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		951A31302800B88900350D60 /* TrackListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListTableViewController.swift; sourceTree = "<group>"; };
+		951A31392800BCEA00350D60 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		951A313B2800BE2100350D60 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		95C9ED192802D9CC00BA0282 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,75 @@
 		951A311B2800B78300350D60 /* iTunes Search JSON */ = {
 			isa = PBXGroup;
 			children = (
-				951A311C2800B78300350D60 /* AppDelegate.swift */,
-				951A311E2800B78300350D60 /* SceneDelegate.swift */,
-				951A31202800B78300350D60 /* ViewController.swift */,
-				951A31222800B78300350D60 /* Main.storyboard */,
-				951A31252800B78300350D60 /* Assets.xcassets */,
-				951A31272800B78300350D60 /* LaunchScreen.storyboard */,
-				951A312A2800B78300350D60 /* Info.plist */,
+				951A31382800B95A00350D60 /* Models */,
+				951A31362800B93200350D60 /* Services */,
+				951A31332800B8D800350D60 /* ViewControllers */,
+				95C9ED1B2802E86700BA0282 /* Cells */,
+				951A31322800B8CD00350D60 /* App */,
+				951A31342800B8E700350D60 /* Storyboards */,
+				951A31352800B8FA00350D60 /* Resources */,
 			);
 			path = "iTunes Search JSON";
+			sourceTree = "<group>";
+		};
+		951A31322800B8CD00350D60 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				951A311C2800B78300350D60 /* AppDelegate.swift */,
+				951A311E2800B78300350D60 /* SceneDelegate.swift */,
+				951A312A2800B78300350D60 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		951A31332800B8D800350D60 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				951A31202800B78300350D60 /* DetailViewController.swift */,
+				951A31302800B88900350D60 /* TrackListTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		951A31342800B8E700350D60 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				951A31222800B78300350D60 /* Main.storyboard */,
+				951A31272800B78300350D60 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		951A31352800B8FA00350D60 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				951A31252800B78300350D60 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		951A31362800B93200350D60 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				951A313B2800BE2100350D60 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		951A31382800B95A00350D60 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				951A31392800BCEA00350D60 /* Track.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		95C9ED1B2802E86700BA0282 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				95C9ED192802D9CC00BA0282 /* TrackCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +206,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				951A31212800B78300350D60 /* ViewController.swift in Sources */,
+				951A313C2800BE2100350D60 /* NetworkManager.swift in Sources */,
+				951A31212800B78300350D60 /* DetailViewController.swift in Sources */,
+				951A313A2800BCEA00350D60 /* Track.swift in Sources */,
+				951A31312800B88900350D60 /* TrackListTableViewController.swift in Sources */,
 				951A311D2800B78300350D60 /* AppDelegate.swift in Sources */,
+				95C9ED1A2802D9CC00BA0282 /* TrackCell.swift in Sources */,
 				951A311F2800B78300350D60 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +363,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WGB4PJQA77;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iTunes Search JSON/Info.plist";
+				INFOPLIST_FILE = "iTunes Search JSON/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -306,7 +378,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,7 +391,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WGB4PJQA77;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iTunes Search JSON/Info.plist";
+				INFOPLIST_FILE = "iTunes Search JSON/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -334,7 +406,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
