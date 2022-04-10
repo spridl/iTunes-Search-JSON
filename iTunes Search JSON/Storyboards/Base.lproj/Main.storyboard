@@ -116,20 +116,26 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="shZ-wH-fx6">
+                                <rect key="frame" x="197" y="344" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lam-CC-y56"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="lam-CC-y56" firstAttribute="trailing" secondItem="cWI-TI-MQB" secondAttribute="trailing" constant="20" id="0Qw-vv-QMI"/>
+                            <constraint firstItem="shZ-wH-fx6" firstAttribute="centerX" secondItem="cWI-TI-MQB" secondAttribute="centerX" id="30v-tI-xJA"/>
                             <constraint firstItem="cWI-TI-MQB" firstAttribute="leading" secondItem="lam-CC-y56" secondAttribute="leading" constant="20" id="QQ9-Rg-z2I"/>
                             <constraint firstItem="ysQ-B3-Tbl" firstAttribute="top" secondItem="cWI-TI-MQB" secondAttribute="bottom" constant="20" id="gFZ-Tz-7PG"/>
                             <constraint firstItem="ysQ-B3-Tbl" firstAttribute="leading" secondItem="lam-CC-y56" secondAttribute="leading" constant="20" id="ij3-ZX-PDb"/>
                             <constraint firstItem="cWI-TI-MQB" firstAttribute="top" secondItem="lam-CC-y56" secondAttribute="top" constant="27" id="kf3-tp-V4v"/>
+                            <constraint firstItem="shZ-wH-fx6" firstAttribute="centerY" secondItem="cWI-TI-MQB" secondAttribute="centerY" id="kgk-m2-Lty"/>
                             <constraint firstItem="lam-CC-y56" firstAttribute="trailing" secondItem="ysQ-B3-Tbl" secondAttribute="trailing" constant="20" id="yML-hS-Xa1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ft0-6Y-8dk"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="shZ-wH-fx6" id="2qK-Lr-4iY"/>
                         <outlet property="artistNameLabel" destination="ia6-l1-pyH" id="TJp-g9-8NT"/>
                         <outlet property="collectionNameLabel" destination="Xbu-4b-ySB" id="OKS-ef-KxK"/>
                         <outlet property="trackImageView" destination="cWI-TI-MQB" id="qxM-Te-c44"/>

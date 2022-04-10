@@ -13,12 +13,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var collectionNameLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private let networkManager = NetworkManager.shared
     var track: Track!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
         configure()
     }
     
@@ -34,6 +37,7 @@ class DetailViewController: UIViewController {
             DispatchQueue.main.async {
                 guard let image = image else { return }
                 self.trackImageView.image = image
+                self.activityIndicator.stopAnimating()
             }
         }
     }
