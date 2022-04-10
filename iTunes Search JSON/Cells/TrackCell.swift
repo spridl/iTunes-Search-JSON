@@ -20,9 +20,10 @@ class TrackCell: UITableViewCell {
         artistNameLabel.text = track.artistName
         
         guard let url = track.artworkUrl100 else { return }
-        networkManager.fetchImage(of: url) { image in
+        networkManager.fetchImage(of: url) { data in
+            guard let data = data else { return }
             DispatchQueue.main.async {
-                guard let image = image else { return }
+                guard let image = UIImage(data: data) else { return }
                 self.trackImageView.image = image
             }
         }

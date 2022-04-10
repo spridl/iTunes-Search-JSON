@@ -4,8 +4,7 @@
 //
 //  Created by Тимур on 08.04.2022.
 //
-
-import UIKit
+import Foundation
 
 class NetworkManager {
     
@@ -31,15 +30,14 @@ class NetworkManager {
         }.resume()
     }
     
-    func fetchImage(of imageUrl: String, completion: @escaping (UIImage?) -> ()) {
+    func fetchImage(of imageUrl: String, completion: @escaping (Data?) -> ()) {
         guard let url = URL(string: imageUrl) else { return }
         urlSession.dataTask(with: url) { data, _, error in
             guard let data = data else {
                 print(error?.localizedDescription ?? "No error description")
                 return
             }
-            let image = UIImage(data: data)
-            completion(image)
+            completion(data)
         }.resume()
     }
     private init() {}
