@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 class DetailViewController: UIViewController {
     
@@ -14,7 +15,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var collectionNameLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var playPauseButton: UIButton!
     
+    private let player = AVPlayer()
     private let networkManager = NetworkManager.shared
     var track: Track!
     
@@ -23,6 +26,23 @@ class DetailViewController: UIViewController {
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         configure()
+        playTrack()
+    }
+    
+    @IBAction func playPauseButtonPressed() {
+        if player.timeControlStatus == .playing {
+            playPauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            player.pause()
+        } else {
+            playPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+            player.play()
+        }
+    }
+    
+    private func playTrack() {
+        guard let url = URL(string: track.previewUrl ?? "") else { return }
+        player.replaceCurrentItem(with: AVPlayerItem(url: url))
+        player.play()
     }
     
     private func configure() {

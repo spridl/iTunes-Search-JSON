@@ -16,6 +16,7 @@ struct Track: Decodable {
     let trackName: String
     let collectionName: String?
     let artworkUrl100: String?
+    var previewUrl: String?
     
     init(artistName: String, trackName: String, collectionName: String?, artworkUrl100: String?) {
         self.artistName = artistName
@@ -29,6 +30,7 @@ struct Track: Decodable {
         trackName = tracksData["trackName"] as? String ?? ""
         collectionName = tracksData["collectionName"] as? String
         artworkUrl100 = tracksData["artworkUrl100"] as? String
+        previewUrl = tracksData["previewUrl"] as? String
     }
     
     static func getTracks(from value: Any) -> [Track] {
