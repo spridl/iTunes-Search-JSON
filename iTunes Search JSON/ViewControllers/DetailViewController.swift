@@ -25,6 +25,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        trackImageView.layer.cornerRadius = 10
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         configure()
@@ -77,7 +78,7 @@ class DetailViewController: UIViewController {
                     self.trackImageView.layer.removeAllAnimations()
                     self.animationStarted.toggle()
                 }
-                
+
             }
     }
     
