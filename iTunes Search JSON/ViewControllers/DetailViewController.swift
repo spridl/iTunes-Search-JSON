@@ -17,6 +17,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var playPauseButton: UIButton!
     
+    private var animationStarted = false
+    
     private let player = AVPlayer()
     private let networkManager = NetworkManager.shared
     var track: Track!
@@ -27,9 +29,12 @@ class DetailViewController: UIViewController {
         activityIndicator.hidesWhenStopped = true
         configure()
         playTrack()
+        setImageAnimate()
     }
     
     @IBAction func playPauseButtonPressed() {
+        setButtonAnimate()
+        setImageAnimate()
         if player.timeControlStatus == .playing {
             playPauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
             player.pause()
@@ -43,6 +48,37 @@ class DetailViewController: UIViewController {
         guard let url = URL(string: track.previewUrl ?? "") else { return }
         player.replaceCurrentItem(with: AVPlayerItem(url: url))
         player.play()
+    }
+    
+    private func setButtonAnimate() {
+        playPauseButton.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0,
+            usingSpringWithDamping: 0.4,
+            initialSpringVelocity: 2.5,
+            options: .allowUserInteraction) {
+                self.playPauseButton.transform = CGAffineTransform.identity
+            }
+    }
+    
+    private func setImageAnimate() {
+        trackImageView.transform = CGAffineTransform(scaleX: 0.98, y: 0.98)
+        UIView.animate(
+            withDuration: 1,
+            delay: 0,
+            usingSpringWithDamping: 5,
+            initialSpringVelocity: 0.1,
+            options: [.autoreverse, .repeat]) {
+                if !self.animationStarted {
+                    self.trackImageView.transform = CGAffineTransform.identity
+                    self.animationStarted.toggle()
+                } else {
+                    self.trackImageView.layer.removeAllAnimations()
+                    self.animationStarted.toggle()
+                }
+                
+            }
     }
     
     private func configure() {

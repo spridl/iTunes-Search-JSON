@@ -120,10 +120,15 @@
                                 <rect key="frame" x="150" y="201" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5if-xc-a2B">
-                                <rect key="frame" x="140.5" y="484" width="39.5" height="31"/>
+                                <rect key="frame" x="125" y="466" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5if-xc-a2B" secondAttribute="height" multiplier="33:33" id="kdE-bl-FQA"/>
+                                </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="pause.fill" catalog="system" imagePadding="0.0"/>
+                                <buttonConfiguration key="configuration" style="plain" image="pause.fill" catalog="system" imagePadding="0.0">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="50" scale="large"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="playPauseButtonPressed" destination="vEB-c3-yda" eventType="touchUpInside" id="R7Y-vq-Dkt"/>
                                 </connections>
@@ -134,9 +139,10 @@
                         <constraints>
                             <constraint firstItem="lam-CC-y56" firstAttribute="trailing" secondItem="cWI-TI-MQB" secondAttribute="trailing" constant="20" id="0Qw-vv-QMI"/>
                             <constraint firstItem="shZ-wH-fx6" firstAttribute="centerX" secondItem="cWI-TI-MQB" secondAttribute="centerX" id="30v-tI-xJA"/>
+                            <constraint firstItem="5if-xc-a2B" firstAttribute="height" secondItem="0ik-gV-8d8" secondAttribute="height" multiplier="0.123239" id="CD0-di-b1Z"/>
                             <constraint firstItem="cWI-TI-MQB" firstAttribute="leading" secondItem="lam-CC-y56" secondAttribute="leading" constant="20" id="QQ9-Rg-z2I"/>
                             <constraint firstItem="ysQ-B3-Tbl" firstAttribute="top" secondItem="cWI-TI-MQB" secondAttribute="bottom" constant="20" id="gFZ-Tz-7PG"/>
-                            <constraint firstItem="5if-xc-a2B" firstAttribute="top" secondItem="ysQ-B3-Tbl" secondAttribute="bottom" constant="43" id="ggH-u7-RqJ"/>
+                            <constraint firstItem="5if-xc-a2B" firstAttribute="top" secondItem="ysQ-B3-Tbl" secondAttribute="bottom" constant="25" id="ggH-u7-RqJ"/>
                             <constraint firstItem="ysQ-B3-Tbl" firstAttribute="leading" secondItem="lam-CC-y56" secondAttribute="leading" constant="20" id="ij3-ZX-PDb"/>
                             <constraint firstItem="cWI-TI-MQB" firstAttribute="top" secondItem="lam-CC-y56" secondAttribute="top" constant="27" id="kf3-tp-V4v"/>
                             <constraint firstItem="shZ-wH-fx6" firstAttribute="centerY" secondItem="cWI-TI-MQB" secondAttribute="centerY" id="kgk-m2-Lty"/>
@@ -178,7 +184,10 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Cyt-Xy-pOu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="b73-nr-gWi" id="56Z-a2-irr"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nw-f0-OA1">
                                 <rect key="frame" x="125.5" y="401" width="69" height="31"/>
