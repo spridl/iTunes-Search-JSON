@@ -33,13 +33,13 @@ class DetailViewController: UIViewController {
         artistNameLabel.text = track.artistName
         collectionNameLabel.text = track.collectionName
         
-        networkManager.fetchImage(of: url) { data in
-            guard let data = data else { return }
-            
-            DispatchQueue.main.async {
-                guard let image = UIImage(data: data) else { return }
-                self.trackImageView.image = image
+        networkManager.fetchImage(from: url) { result in
+            switch result {
+            case .success(let data):
+                self.trackImageView.image = UIImage(data: data)
                 self.activityIndicator.stopAnimating()
+            case .failure(let error):
+                print(error)
             }
         }
     }

@@ -16,6 +16,8 @@
 		951A31312800B88900350D60 /* TrackListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A31302800B88900350D60 /* TrackListTableViewController.swift */; };
 		951A313A2800BCEA00350D60 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A31392800BCEA00350D60 /* Track.swift */; };
 		951A313C2800BE2100350D60 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A313B2800BE2100350D60 /* NetworkManager.swift */; };
+		9566A4D42805F6E100E1C8C5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566A4D32805F6E100E1C8C5 /* SearchViewController.swift */; };
+		9566A4D72805FA7C00E1C8C5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9566A4D62805FA7C00E1C8C5 /* Alamofire */; };
 		95C9ED1A2802D9CC00BA0282 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C9ED192802D9CC00BA0282 /* TrackCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,7 @@
 		951A31302800B88900350D60 /* TrackListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListTableViewController.swift; sourceTree = "<group>"; };
 		951A31392800BCEA00350D60 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		951A313B2800BE2100350D60 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9566A4D32805F6E100E1C8C5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		95C9ED192802D9CC00BA0282 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9566A4D72805FA7C00E1C8C5 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				951A31202800B78300350D60 /* DetailViewController.swift */,
+				9566A4D32805F6E100E1C8C5 /* SearchViewController.swift */,
 				951A31302800B88900350D60 /* TrackListTableViewController.swift */,
 			);
 			path = ViewControllers;
@@ -151,6 +156,9 @@
 			dependencies = (
 			);
 			name = "iTunes Search JSON";
+			packageProductDependencies = (
+				9566A4D62805FA7C00E1C8C5 /* Alamofire */,
+			);
 			productName = "iTunes Search JSON";
 			productReference = 951A31192800B78300350D60 /* iTunes Search JSON.app */;
 			productType = "com.apple.product-type.application";
@@ -179,6 +187,9 @@
 				Base,
 			);
 			mainGroup = 951A31102800B78300350D60;
+			packageReferences = (
+				9566A4D52805FA7C00E1C8C5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 951A311A2800B78300350D60 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -208,6 +219,7 @@
 			files = (
 				951A313C2800BE2100350D60 /* NetworkManager.swift in Sources */,
 				951A31212800B78300350D60 /* DetailViewController.swift in Sources */,
+				9566A4D42805F6E100E1C8C5 /* SearchViewController.swift in Sources */,
 				951A313A2800BCEA00350D60 /* Track.swift in Sources */,
 				951A31312800B88900350D60 /* TrackListTableViewController.swift in Sources */,
 				951A311D2800B78300350D60 /* AppDelegate.swift in Sources */,
@@ -432,6 +444,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9566A4D52805FA7C00E1C8C5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9566A4D62805FA7C00E1C8C5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9566A4D52805FA7C00E1C8C5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 951A31112800B78300350D60 /* Project object */;
 }

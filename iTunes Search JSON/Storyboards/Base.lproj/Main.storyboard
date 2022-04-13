@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PIt-Id-1eQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UZU-GF-5Hk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Linkin Park-->
+        <!--Track List Table View Controller-->
         <scene sceneID="7HM-He-4NQ">
             <objects>
                 <tableViewController id="TcE-Yj-LoP" customClass="TrackListTableViewController" customModule="iTunes_Search_JSON" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,11 +73,11 @@
                             <outlet property="delegate" destination="TcE-Yj-LoP" id="mkm-gF-nur"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Linkin Park" id="sak-xh-7PQ"/>
+                    <navigationItem key="navigationItem" id="sak-xh-7PQ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTV-3H-rmM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="382.60869565217394" y="113.83928571428571"/>
+            <point key="canvasLocation" x="1292.753623188406" y="113.83928571428571"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="YHk-nD-XtH">
@@ -88,13 +88,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cWI-TI-MQB">
-                                <rect key="frame" x="20" y="167" width="374" height="374"/>
+                                <rect key="frame" x="20" y="115" width="374" height="374"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cWI-TI-MQB" secondAttribute="height" multiplier="1:1" id="YQz-yR-8No"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ysQ-B3-Tbl">
-                                <rect key="frame" x="20" y="561" width="374" height="70"/>
+                                <rect key="frame" x="20" y="509" width="374" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nSW-Ec-bMR">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
@@ -117,7 +117,7 @@
                                 </subviews>
                             </stackView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="shZ-wH-fx6">
-                                <rect key="frame" x="197" y="344" width="20" height="20"/>
+                                <rect key="frame" x="197" y="292" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lam-CC-y56"/>
@@ -144,31 +144,99 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDo-qo-9A0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214.4927536231885" y="113.83928571428571"/>
+            <point key="canvasLocation" x="2124.6376811594205" y="113.83928571428571"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="A9A-CR-0Uy">
+            <objects>
+                <viewController id="b73-nr-gWi" customClass="SearchViewController" customModule="iTunes_Search_JSON" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eIQ-Do-TSm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iTunes track search " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0AO-aT-D1H">
+                                <rect key="frame" x="40" y="148" width="334" height="36"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
+                                <color key="textColor" red="0.32958817569999999" green="0.32958817569999999" blue="0.32958817569999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter search track" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oGt-LG-SDv">
+                                <rect key="frame" x="82" y="431" width="250" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Cyt-Xy-pOu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nw-f0-OA1">
+                                <rect key="frame" x="172.5" y="565" width="69" height="31"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Search"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="b73-nr-gWi" eventType="touchUpInside" id="gjd-Gs-tJJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rsg-d4-njV"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oGt-LG-SDv" firstAttribute="centerX" secondItem="eIQ-Do-TSm" secondAttribute="centerX" id="A5Z-3n-lU7"/>
+                            <constraint firstItem="0AO-aT-D1H" firstAttribute="leading" secondItem="Rsg-d4-njV" secondAttribute="leading" constant="40" id="Dz6-3K-oe3"/>
+                            <constraint firstItem="0AO-aT-D1H" firstAttribute="top" secondItem="Rsg-d4-njV" secondAttribute="top" constant="60" id="R8W-5S-iT9"/>
+                            <constraint firstItem="Rsg-d4-njV" firstAttribute="trailing" secondItem="0AO-aT-D1H" secondAttribute="trailing" constant="40" id="VcL-hd-I7j"/>
+                            <constraint firstItem="oGt-LG-SDv" firstAttribute="centerY" secondItem="eIQ-Do-TSm" secondAttribute="centerY" id="Vco-L2-Dnp"/>
+                            <constraint firstItem="9Nw-f0-OA1" firstAttribute="top" secondItem="oGt-LG-SDv" secondAttribute="bottom" constant="100" id="YRQ-04-A8n"/>
+                            <constraint firstItem="9Nw-f0-OA1" firstAttribute="centerX" secondItem="eIQ-Do-TSm" secondAttribute="centerX" id="ajc-47-fgB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nay-bL-Ijd"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="oGt-LG-SDv" id="UDS-9V-c5g"/>
+                        <segue destination="TcE-Yj-LoP" kind="show" identifier="searchSegue" id="c42-8F-Spe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rak-5c-j9K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="423.1884057971015" y="113.83928571428571"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="7Lc-Va-Wur">
+        <scene sceneID="VG7-Lp-cdg">
             <objects>
-                <navigationController id="PIt-Id-1eQ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="9jC-JU-Rdk">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UZU-GF-5Hk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dhw-4R-3dk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="TcE-Yj-LoP" kind="relationship" relationship="rootViewController" id="O3P-fx-dgy"/>
+                        <segue destination="b73-nr-gWi" kind="relationship" relationship="rootViewController" id="0ni-zd-tnP"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JUl-Np-Rmr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N2a-aI-HHQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-505" y="114"/>
+            <point key="canvasLocation" x="-488.40579710144931" y="113.83928571428571"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
