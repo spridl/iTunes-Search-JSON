@@ -40,6 +40,18 @@ class NetworkManager {
             }
     }
     
+    func fetchImageWithAF(from url: String?,completion: @escaping(Result<Data, NetworkError>) -> Void) {
+        guard let url = url else { return }
+        AF.request(url).validate().responseData { responseData in
+            switch responseData.result {
+            case .success(let data):
+                completion(.success(data))
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     func fetchImage(from url: String?, completion: @escaping(Result<Data, NetworkError>) -> Void) {
         guard let url = URL(string: url ?? "") else {
             completion(.failure(.invalidURL))

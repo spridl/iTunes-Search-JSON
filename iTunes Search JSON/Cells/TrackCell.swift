@@ -20,7 +20,7 @@ class TrackCell: UITableViewCell {
         artistNameLabel.text = track.artistName
         
         guard let url = track.artworkUrl100 else { return }
-        networkManager.fetchImage(from: url) { result in
+        networkManager.fetchImageWithAF(from: url) { result in
             switch result {
             case .success(let data):
                 self.trackImageView.image = UIImage(data: data)

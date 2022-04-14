@@ -90,7 +90,7 @@ class DetailViewController: UIViewController {
         artistNameLabel.text = track.artistName
         collectionNameLabel.text = track.collectionName
         
-        networkManager.fetchImage(from: url) { result in
+        networkManager.fetchImageWithAF(from: url) { result in
             switch result {
             case .success(let data):
                 self.trackImageView.image = UIImage(data: data)

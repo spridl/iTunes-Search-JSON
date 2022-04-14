@@ -6,10 +6,6 @@
 //
 
 // MARK: - Track
-struct Tracks: Decodable {
-    let resultCount: Int
-    let results: [Track]
-}
 
 struct Track: Decodable {
     let artistName: String
@@ -17,13 +13,6 @@ struct Track: Decodable {
     let collectionName: String?
     let artworkUrl100: String?
     var previewUrl: String?
-    
-    init(artistName: String, trackName: String, collectionName: String?, artworkUrl100: String?) {
-        self.artistName = artistName
-        self.trackName = trackName
-        self.collectionName = collectionName
-        self.artworkUrl100 = artworkUrl100
-    }
     
     init(tracksData: [String: Any]) {
         artistName = tracksData["artistName"] as? String ?? ""
